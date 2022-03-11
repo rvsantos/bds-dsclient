@@ -1,9 +1,12 @@
 
 package com.devsuperior.clientcrud.dtos;
 
+import java.io.Serializable;
+
 import com.devsuperior.clientcrud.entities.Client;
 
-public class ClientDTO {
+public class ClientDTO implements Serializable {
+    private static final Long serialVersionUID = 1L;
     private Long id;
     private String name;
     private String cpf;
