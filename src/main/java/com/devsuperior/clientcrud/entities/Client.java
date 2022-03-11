@@ -22,8 +22,10 @@ public class Client {
     private String name;
     private String cpf;
     private Double income;
-    private Instant birthDate;
     private Integer children;
+
+    @Column(columnDefinition = TIMESTAMP_WITHOUT_TIME_ZONE)
+    private Instant birthDate;
 
     @Column(columnDefinition = TIMESTAMP_WITHOUT_TIME_ZONE)
     private Instant createdAt;

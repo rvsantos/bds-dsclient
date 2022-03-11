@@ -1,0 +1,10 @@
+INSERT INTO tb_client (name, cpf, income, birth_date, children, created_at) VALUES ('Rafael Vieira', '89905933018', 7000.0, TIMESTAMP WITHOUT TIME ZONE '1986-09-22T22:30:07.12345Z', 0, NOW());
+INSERT INTO tb_client (name, cpf, income, birth_date, children, created_at) VALUES ('Mustafa Goulão', '37732701003', 7080.0, TIMESTAMP WITHOUT TIME ZONE '1996-02-02T22:30:07.12345Z', 2, NOW());
+INSERT INTO tb_client (name, cpf, income, birth_date, children, created_at) VALUES ('Brenda Pequeno', '07238069008', 800.0, TIMESTAMP WITHOUT TIME ZONE '1946-02-28T22:30:07.12345Z', 1, NOW());
+INSERT INTO tb_client (name, cpf, income, birth_date, children, created_at) VALUES ('Destiny Ferreira', '69542719000', 2309.0, TIMESTAMP WITHOUT TIME ZONE '2001-10-12T22:30:07.12345Z', 3, NOW());
+INSERT INTO tb_client (name, cpf, income, birth_date, children, created_at) VALUES ('Mathias Fontoura', '77174594000', 2312.0, TIMESTAMP WITHOUT TIME ZONE '2004-07-13T01:30:07.12345Z', 0, NOW());
+INSERT INTO tb_client (name, cpf, income, birth_date, children, created_at) VALUES ('Emanuelle Bandeira', '71271704013', 98.0, TIMESTAMP WITHOUT TIME ZONE '1993-04-22T22:30:07.12345Z', 0, NOW());
+INSERT INTO tb_client (name, cpf, income, birth_date, children, created_at) VALUES ('Lais Marcondes', '69299842051', 3499.0, TIMESTAMP WITHOUT TIME ZONE '1989-11-11T07:30:07.12345Z', 4, NOW());
+INSERT INTO tb_client (name, cpf, income, birth_date, children, created_at) VALUES ('Izabella Melgaço', '28962580004', 10000.0, TIMESTAMP WITHOUT TIME ZONE '2008-03-01T14:30:07.12345Z', 2, NOW());
+INSERT INTO tb_client (name, cpf, income, birth_date, children, created_at) VALUES ('Anamar Maciel', '79655785068', 13987.0, TIMESTAMP WITHOUT TIME ZONE '2010-12-22T22:30:07.12345Z', 3, NOW());
+INSERT INTO tb_client (name, cpf, income, birth_date, children, created_at) VALUES ('Max Vinhas', '57594904001', 234.0, TIMESTAMP WITHOUT TIME ZONE '2013-07-27T03:30:07.12345Z', 1, NOW());
