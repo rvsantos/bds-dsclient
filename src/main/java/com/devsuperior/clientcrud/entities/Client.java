@@ -35,7 +35,7 @@ public class Client implements Serializable {
     @Column(columnDefinition = TIMESTAMP_WITHOUT_TIME_ZONE)
     private Instant updatedAt;
 
-    private Client() {
+    public Client() {
     }
 
     private Client(Long id, String name, String cpf, Double income, Instant birthDate, Integer children) {

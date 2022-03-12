@@ -1,5 +1,7 @@
 package com.devsuperior.clientcrud.services;
 
+import javax.persistence.EntityNotFoundException;
+
 import com.devsuperior.clientcrud.dtos.ClientDTO;
 import com.devsuperior.clientcrud.entities.Client;
 import com.devsuperior.clientcrud.exceptions.ResourceNotFoundException;
@@ -32,9 +34,20 @@ public class ClientService {
         return new ClientDTO(client);
     }
 
+    @Transactional
     public ClientDTO insert(ClientDTO clientDTO) {
         Client client = clientDTO.toClient();
         return new ClientDTO(this.repository.save(client));
     }
 
+    @Transactional
+    public ClientDTO update(Long id, ClientDTO clientDTO) {
+        try {
+            Client client = this.repository.getById(id);
+            var clientSaved = this.repository.save(clientDTO.copyDtoToClient(client));
+            return new ClientDTO(clientSaved);
+        } catch (EntityNotFoundException e) {
+            throw new ResourceNotFoundException(CLIENT_NOT_FOUND);
+        }
+    }
 }
