@@ -35,10 +35,10 @@ public class Client implements Serializable {
     @Column(columnDefinition = TIMESTAMP_WITHOUT_TIME_ZONE)
     private Instant updatedAt;
 
-    public Client() {
+    private Client() {
     }
 
-    public Client(Long id, String name, String cpf, Double income, Instant birthDate, Integer children) {
+    private Client(Long id, String name, String cpf, Double income, Instant birthDate, Integer children) {
         this.id = id;
         this.name = name;
         this.cpf = cpf;
@@ -124,5 +124,48 @@ public class Client implements Serializable {
         } else if (!id.equals(other.id))
             return false;
         return true;
+    }
+
+    public static class ClientBuilder {
+        private Long id;
+        private String name;
+        private String cpf;
+        private Double income;
+        private Integer children;
+        private Instant birthDate;
+
+        public ClientBuilder id(Long id) {
+            this.id = id;
+            return this;
+        }
+
+        public ClientBuilder name(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public ClientBuilder cpf(String cpf) {
+            this.cpf = cpf;
+            return this;
+        }
+
+        public ClientBuilder income(Double income) {
+            this.income = income;
+            return this;
+        }
+
+        public ClientBuilder children(Integer children) {
+            this.children = children;
+            return this;
+        }
+
+        public ClientBuilder birthDate(Instant birthDate) {
+            this.birthDate = birthDate;
+            return this;
+        }
+
+        public Client build() {
+            return new Client(id, name, cpf, income, birthDate, children);
+        }
     }
 }

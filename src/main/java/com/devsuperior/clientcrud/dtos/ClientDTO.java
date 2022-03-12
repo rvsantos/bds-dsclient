@@ -13,7 +13,7 @@ public class ClientDTO implements Serializable {
     private Double income;
     private Integer children;
 
-    public ClientDTO() {
+    private ClientDTO() {
     }
 
     public ClientDTO(Long id, String name, String cpf, Double income, Integer children) {
@@ -66,5 +66,14 @@ public class ClientDTO implements Serializable {
 
     public void setChildren(Integer children) {
         this.children = children;
+    }
+
+    public Client toClient() {
+        return new Client.ClientBuilder()
+                .name(this.getName())
+                .cpf(this.getCpf())
+                .income(this.getIncome())
+                .children(this.getChildren())
+                .build();
     }
 }
