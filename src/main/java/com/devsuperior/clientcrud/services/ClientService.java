@@ -7,6 +7,7 @@ import com.devsuperior.clientcrud.entities.Client;
 import com.devsuperior.clientcrud.exceptions.ResourceNotFoundException;
 import com.devsuperior.clientcrud.repositories.ClientRepository;
 
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -47,6 +48,14 @@ public class ClientService {
             var clientSaved = this.repository.save(clientDTO.copyDtoToClient(client));
             return new ClientDTO(clientSaved);
         } catch (EntityNotFoundException e) {
+            throw new ResourceNotFoundException(CLIENT_NOT_FOUND);
+        }
+    }
+
+    public void delete(Long id) {
+        try {
+            this.repository.deleteById(id);
+        } catch (EmptyResultDataAccessException e) {
             throw new ResourceNotFoundException(CLIENT_NOT_FOUND);
         }
     }
